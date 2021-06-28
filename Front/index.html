@@ -1,0 +1,24 @@
+    <!doctype html>
+    <html ng-app="main-app">
+      <head>
+        <script src="js/angularjs/angular.js"></script>
+        <script src="js/main.js"></script>
+        <link rel="stylesheet" href="css/style.css">
+      </head>
+      <body>
+        <div ng-controller="MainController" class="contaner">
+          <div class="form">
+          <h1>Введите запрос</h1>
+          <div class="block">
+          <input type="text" ng-model="userText" placeholder="Ваш запрос">
+            <button class="btn" ng-click="check(userText)">Проверить</button>
+          </div>
+            <div class="answer" ng-show="visibalAnswer">
+            <p>Температура:{{temperature}} {{units}}</p>
+            <p>Время:{{date}}</p>
+            </div>
+          </div>
+        </div>
+
+      </body>
+    </html>
