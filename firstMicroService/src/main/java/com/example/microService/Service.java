@@ -12,7 +12,7 @@ import java.util.Date;
 @CrossOrigin("*")
 public class Service {
 
-    @Value("${temperature.service.url}")
+    @Value("${TEMPERATURE-SERVICE-URL}")
     private String secondServiceURL;
 
     @PostMapping("/api/now")
@@ -20,6 +20,6 @@ public class Service {
         RestTemplate restTemplate = new RestTemplate();
         TemperatureDTO response = restTemplate.getForObject(secondServiceURL, TemperatureDTO.class);
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd.MM.yyyy-hh.mm.ss");
-        return new Temperature(response.getTemperature(), response.getUnits(),  simpleDateFormat.format(new Date()));
+        return new Temperature(userRequest.getCity(), response.getTemperature(), response.getUnits(),  simpleDateFormat.format(new Date()));
     }
 }

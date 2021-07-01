@@ -1,6 +1,7 @@
     <!doctype html>
     <html ng-app="main-app">
       <head>
+        <meta charset="utf-8">
         <script src="js/angularjs/angular.js"></script>
         <script src="js/main.js"></script>
         <link rel="stylesheet" href="css/style.css">
@@ -8,12 +9,13 @@
       <body>
         <div ng-controller="MainController" class="contaner">
           <div class="form">
-          <h1>Введите запрос</h1>
+          <h1>Введите названия города</h1>
           <div class="block">
           <input type="text" ng-model="userText" placeholder="Ваш запрос">
             <button class="btn" ng-click="check(userText)">Проверить</button>
           </div>
             <div class="answer" ng-show="visibalAnswer">
+            <p>В городе:{{city}}</p>
             <p>Температура:{{temperature}} {{units}}</p>
             <p>Время:{{date}}</p>
             </div>

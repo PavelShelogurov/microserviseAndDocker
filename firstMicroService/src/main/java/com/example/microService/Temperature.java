@@ -2,14 +2,24 @@ package com.example.microService;
 
 
 public class Temperature {
+    private String city;
     private int temperature;
     private String units;
     private String date;
 
-    public Temperature(int temperature, String units, String date) {
+    public Temperature(String city, int temperature, String units, String date) {
+        this.city = city;
         this.temperature = temperature;
         this.units = units;
         this.date = date;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
     }
 
     public int getTemperature() {

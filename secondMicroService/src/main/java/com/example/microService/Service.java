@@ -13,7 +13,7 @@ public class Service {
     @GetMapping("/api/temp")
     public TemperatureDTO getTemperature(){
         Random randomTemperature = new Random();
-        return new TemperatureDTO(randomTemperature.nextInt(35), "CELSUIS ");
+        return new TemperatureDTO(randomTemperature.nextInt(35), "Цельсия");
     }
 
 }

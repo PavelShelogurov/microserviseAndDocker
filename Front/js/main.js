@@ -4,6 +4,7 @@ angular.module('main-app', [])
       const url = 'http://localhost:8080/api/now';
       $scope.answerText = 'Тут храниться ответ от микросервиса';
       $scope.visibalAnswer = false;
+      $scope.city;
       $scope.temperature;
       $scope.units;
       $scope.date;
@@ -16,7 +17,7 @@ angular.module('main-app', [])
               'Content-type':'application/json; charset=UTF-8'
             },
             data:{
-              "userText":text
+              "city":text
             }
           }).then(function(response){
             //показывем блок с результами запроса
@@ -24,11 +25,11 @@ angular.module('main-app', [])
           }, function(response) {
             console.log('Произошла ошибка запроса, проверте работу '+url);
           });
-
       }
 
       $scope.showContext = function(jsonResponse){
         $scope.answerText = jsonResponse;
+        $scope.city = jsonResponse.city;
         $scope.temperature = jsonResponse.temperature;
         $scope.units = jsonResponse.units;
         $scope.date = jsonResponse.date;

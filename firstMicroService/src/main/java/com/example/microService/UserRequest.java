@@ -2,13 +2,13 @@ package com.example.microService;
 
 public class UserRequest {
 
-    private String userText;
+    private String city;
 
-    public String getUserText() {
-        return userText;
+    public String getCity() {
+        return city;
     }
 
     public void setUserText(String userText) {
-        this.userText = userText;
+        this.city = userText;
     }
 }
