@@ -1,0 +1,18 @@
+version: "3.9"
+services:
+    second-back:
+        build: secondMicroService/.
+        ports: -"8090"
+
+    first-back:
+        build: firstMicroService/.
+        ports: - "8080:8080"
+        enviroment: 
+            TEMPERATURE-SERVICE-URL: http://localhost:8090/api/temp
+
+    front:
+        build: Front/.
+        ports: - "80:80"
+        depends_on: 
+            - first-back
+            - second-back
