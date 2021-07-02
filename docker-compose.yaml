@@ -2,10 +2,12 @@ version: "3.9"
 services:
     second-back:
         build: secondMicroService/.
+        container_name: random_weather 
         ports: -"8090"
 
     first-back:
         build: firstMicroService/.
+        container_name: api_for_front
         ports: - "8080:8080"
         enviroment: 
             TEMPERATURE-SERVICE-URL: http://localhost:8090/api/temp
